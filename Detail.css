@@ -1,0 +1,451 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fff5f0;
+}
+
+.taj-img {
+  width: 800px;
+  height: 500px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+.taj-img {
+  box-shadow: 0 8px 20px rgba(0, 0, 0);
+}
+.taj-img:hover{
+  transform: translateY(-10px) scale(1.05);
+}
+
+.taj-img {
+  width: 900px;
+  transition: transform 0.6s ease;
+}
+
+.taj-img:hover {
+  transform: rotateY(180deg);
+}
+
+.content {
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  color: #e00b0b;
+}
+
+p {
+  line-height: 1.7;
+  color: #444;
+}
+
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  background: #101be9;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* --------------- */
+
+
+
+
+.payment-section {
+  margin: 60px auto;
+  text-align: center;
+}
+
+.payment-section h2 {
+  color: #1e3799;
+  margin-bottom: 20px;
+}
+
+.payment-box {
+  width: 380px;
+  margin: auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  text-align: left;
+}
+
+.payment-box h3 {
+  margin: 14px 0 8px;
+  color: #333;
+}
+
+.payment-box input,
+.payment-box select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.total {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.total span {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.payment-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0984e3, #00cec9);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.payment-box button:hover {
+  opacity: 0.9;
+}
+
+
+/* ===============================
+   PAYMENT SECTION STYLES ONLY
+================================ */
+
+.payment-section {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+.payment-section h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+/* Payment Card */
+.payment-box {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Section Headings */
+.payment-box h3 {
+  margin: 18px 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #37474f;
+}
+
+/* Inputs & Select */
+.payment-box input,
+.payment-box select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #cfd8dc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.payment-box input:focus,
+.payment-box select:focus {
+  outline: none;
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+}
+
+/* Amount Text */
+.payment-box p {
+  font-size: 16px;
+  margin: 12px 0;
+  font-weight: 500;
+}
+
+#amount {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* Pay Button */
+#payBtn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1e88e5, #0d47a1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.25s;
+}
+
+#payBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(13, 71, 161, 0.35);
+}
+
+/* OTP Box */
+#otpBox {
+  margin-top: 18px;
+  padding: 18px;
+  background: #f4f7ff;
+  border-radius: 14px;
+}
+
+#otpBox input {
+  margin-bottom: 10px;
+}
+
+#otpBox button {
+  width: 100%;
+  padding: 12px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* Smaller QR Container */
+.qr-box {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 12px;
+  padding: 10px;
+  background: #f5f8ff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Smaller QR Image */
+.qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* flight */
+
+
+/* UL container */
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  background: #f2f2f2;
+  padding: 20px 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Each nav item */
+ul li {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Keep icon + text in SAME ROW */
+ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* Icon size */
+ul li img {
+  width: 45px;
+  height: 45px;
+}
+
+/* Text style */
+ul li p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Active underline (example: Hotels = second item) */
+ul li:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  /* background: #007bff; */
+  border-radius: 3px;
+}
+
+/* Offer badge styling */
+.bg-new-solid {
+  position: absolute !important;
+  top: -18px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  background: #6c2bd9 !important;
+  color: white !important;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+ul li {
+  position: relative;
+}
+
+/* Hover underline */
+ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #e81abb;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* When hover */
+ul li:hover::after {
+  width: 100%;
+}
+ul li.active::after {
+  width: 100%;
+}
+
+ul li p.bg-selection-solid {
+  display: none !important;
+}
+
+ul li::after {
+  display: none !important;
+}
+
+ul li {
+  position: relative;
+  border-bottom: none;
+}
+
+
+ul li a {
+  position: relative;
+  display: inline-flex;
+  padding-bottom: 8px;
+  text-decoration: none;
+}
+
+/* Hidden line */
+ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background: #1a73e8;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Show on hover */
+ul li a:hover::after {
+  width: 100%;
+}
+
+ul {
+  background-color: #e6f0ff;
+}
+ul {
+  background-color: #13d1c1;   /* Dark blue */
+  padding: 15px;
+}
+
+/* ------------------------------------------- *
+/
+
+
+/* Navbar Container */
+ul {
+  background: #ffffff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Navbar Items */
+ul li {
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* Navbar Text */
+ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+ul li:hover {
+  background: linear-gradient(45deg, #ab3e62, #db140a);
+  transform: translateY(-3px);
+}
+
+ul li:hover a {
+  color: rgb(190, 177, 40);
+}
+
+
+ul {
+  width: 80%;              /* control width here */
+  margin: 20px auto;       /* center */
+  background: #ffffff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+ul {
+  background: linear-gradient(45deg, #4e73df, #1cc88a);
+  padding: 15px 30px;
+  border-radius: 12px;
+}
+
+
+.nav-heading {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #4e73df;
+  letter-spacing: 3px;
+  margin: 40px 0;
+  text-shadow: 0 0 20px rgba(78,115,223,0.4);
+}

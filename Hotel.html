@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      padding: 40px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .hotel-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #111827;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .location {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+
+    .rating-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .rating-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rating-box {
+      background: #111827;
+      color: white;
+      padding: 3px 7px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .rating-text {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .users {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Popular Hotels</h2>
+
+  <div class="container">
+
+    <!-- Hotel 1 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="">
+      <div class="card-content">
+        <div class="hotel-name">Saltstayz Select - Nehru Place</div>
+        <div class="stars">★ ★ ★</div>
+        <div class="location">Okhla, Delhi</div>
+        <div class="rating-section">
+          <div class="rating-left">
+            <div class="rating-box">6.4</div>
+            <div>
+              <div class="rating-text">Good</div>
+              <div class="users">125 Users</div>
+            </div>
+          </div>
+          <div class="price">₹4,920</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel 2 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="">
+      <div class="card-content">
+        <div class="hotel-name">The Grand Palace</div>
+        <div class="stars">★ ★ ★ ★</div>
+        <div class="location">Connaught Place, Delhi</div>
+        <div class="rating-section">
+          <div class="rating-left">
+            <div class="rating-box">8.2</div>
+            <div>
+              <div class="rating-text">Very Good</div>
+              <div class="users">320 Users</div>
+            </div>
+          </div>
+          <div class="price">₹6,500</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel 3 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" alt="">
+      <div class="card-content">
+        <div class="hotel-name">Royal Comfort Inn</div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="location">Karol Bagh, Delhi</div>
+        <div class="rating-section">
+          <div class="rating-left">
+            <div class="rating-box">9.1</div>
+            <div>
+              <div class="rating-text">Excellent</div>
+              <div class="users">540 Users</div>
+            </div>
+          </div>
+          <div class="price">₹8,200</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel 4 -->
+    <div class="card">
+      <img src="https://q-xx.bstatic.com/xdata/images/hotel/840x460/545948358.jpg?k=c2c666491246cf2128458cf5c23eb5f7f55bb236d6ba16464ca07dbe76c02cca&o=" alt="Hotel Image">
+      <div class="card-content">
+        <div class="hotel-name">City View Residency</div>
+        <div class="stars">★ ★ ★</div>
+        <div class="location">Saket, Delhi</div>
+        <div class="rating-section">
+          <div class="rating-left">
+            <div class="rating-box">7.5</div>
+            <div>
+              <div class="rating-text">Nice</div>
+              <div class="users">210 Users</div>
+            </div>
+          </div>
+          <div class="price">₹5,300</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+   <script src="main.js"></script>
+
+  <style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2919b7, #f3129d);
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.log-col{
+  color:deeppink;
+  font-size: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #f0390c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-links {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #260f89;
+  font-weight: 500;
+}
+
+.login-links span {
+  margin: 0 8px;
+  color: #999;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  font-size: 14px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.forgot {
+  text-decoration: none;
+  color: #4a00e0;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.register-text {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-text a {
+  color: #4a00e0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* icons */
+
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.icon img {
+  width: 20px;
+  height: 20px;
+
+}
+
+.google {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.facebook {
+  background: white;
+  border:1px solid #ddd;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+  <p class="log-col">Welcome To The Increadiable India Travel</p>
+  <h2>Login ✈️</h2>
+
+
+  <form onsubmit="goHome(event)">
+    <input type="text" placeholder="Username" required>
+    <input type="password" placeholder="Password" required>
+
+   <div class="options-row">
+  <label class="remember">
+    <input type="checkbox">
+    Remember me
+  </label>
+
+  <a href="forgotpage.html" class="forgot">Forgot Password?</a>
+  
+</div>
+    <button type="submit">Login</button>
+    <p class="register-text">
+  Don’t have an account?
+  <a href="#">Register Now</a>
+</p>
+    
+    <div class="social-icons">
+  <a href="#" class="icon google">
+    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+  </a>
+
+  <a href="#" class="icon facebook">
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+  </a>
+</div>
+
+  </form>
+
+  
+</div>
+
+<script>
+function goHome(event) {
+  event.preventDefault(); 
+
+  window.location.href = "index.html";
+}
+</script>
+  </div>
+
+</body>
+</html>

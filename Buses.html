@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bus Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+    }
+
+    .flight-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .trip-type button {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .trip-type .active {
+      border: 1px solid #1a73e8;
+      color: #1a73e8;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-row input,
+    .search-row select {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .swap-btn {
+      padding: 12px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .search-btn {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="flight-container">
+  <h2>Book Your Buses</h2>
+
+  <div class="trip-type">
+    <button class="active" id="oneWay">One Way</button>
+    <button id="roundTrip">Round Trip</button>
+  </div>
+
+  <div class="search-row">
+
+    <!-- FROM -->
+    <select id="from">
+      <option value="">From</option>
+      <option value="DEL">DEL - New Delhi</option>
+      <option value="BOM">BOM - Mumbai</option>
+      <option value="HYD">HYD - Hyderabad</option>
+      <option value="BLR">BLR - Bengaluru</option>
+      <option value="MAA">MAA - Chennai</option>
+    </select>
+
+    <!-- SWAP BUTTON -->
+    <button type="button" id="swapBtn" class="swap-btn">⇄</button>
+
+    <!-- TO -->
+    <select id="to">
+      <option value="">To</option>
+      <option value="DEL">DEL - New Delhi</option>
+      <option value="BOM">BOM - Mumbai</option>
+      <option value="HYD">HYD - Hyderabad</option>
+      <option value="BLR">BLR - Bengaluru</option>
+      <option value="MAA">MAA - Chennai</option>
+      <option value="GOI">GOI - Goa</option>
+      <option value="CCU">CCU - Kolkata</option>
+      <option value="AMD">AMD - Ahmedabad</option>
+    </select>
+
+    <input type="date" id="departure">
+    <input type="date" id="returnDate">
+    <input type="text" placeholder="1 Traveller, Economy">
+
+    <!-- <button class="search-btn" id="searchBtn">Search</button>
+      -->
+    <button type="button" class="search-btn" id="searchBtn">Search</button>
+
+  </div>
+</div>
+
+<script>
+  const oneWayBtn = document.getElementById("oneWay");
+  const roundTripBtn = document.getElementById("roundTrip");
+  const returnInput = document.getElementById("returnDate");
+  const searchBtn = document.getElementById("searchBtn");
+  const swapBtn = document.getElementById("swapBtn");
+
+  // Hide return date by default
+  returnInput.style.display = "none";
+
+  // One Way
+  oneWayBtn.addEventListener("click", function() {
+    oneWayBtn.classList.add("active");
+    roundTripBtn.classList.remove("active");
+    returnInput.style.display = "none";
+  });
+
+  // Round Trip
+  roundTripBtn.addEventListener("click", function() {
+    roundTripBtn.classList.add("active");
+    oneWayBtn.classList.remove("active");
+    returnInput.style.display = "block";
+  });
+
+  // Swap From & To
+  swapBtn.addEventListener("click", function() {
+    const from = document.getElementById("from");
+    const to = document.getElementById("to");
+
+    let temp = from.value;
+    from.value = to.value;
+    to.value = temp;
+  });
+
+  // Search Validation
+  searchBtn.addEventListener("click", function() {
+
+    const from = document.getElementById("from").value;
+    const to = document.getElementById("to").value;
+    const departure = document.getElementById("departure").value;
+    const returnDate = document.getElementById("returnDate").value;
+
+    if (from === "" || to === "" || departure === "") {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    if (from === to) {
+      alert("From and To cannot be same!");
+      return;
+    }
+
+    if (roundTripBtn.classList.contains("active") && returnDate === "") {
+      alert("Please select return date!");
+      return;
+    }
+
+    alert("Searching flights from " + from + " to " + to);
+  });
+</script>
+
+</body>
+</html>

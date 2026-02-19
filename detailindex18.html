@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="Detail.css">
+  <script src="main.js"></script>
+  <div class="taj-img">
+    <img src="Udaipur.png" alt="udaipur" class="taj-img">
+  </div>
+
+  <div class="content">
+  <h1>Udaipur</h1>
+
+  <p>
+    Udaipur, also known as the “City of Lakes,” is one of the most romantic
+    cities in India, located in Rajasthan.
+  </p>
+
+  <p>
+    The city is famous for its beautiful lakes, palaces, and scenic
+    surroundings.
+  </p>
+
+  <p>
+    Major attractions include Lake Pichola, City Palace, Jag Mandir, and
+    Fateh Sagar Lake.
+  </p>
+
+  <p>
+    Udaipur is known for its royal heritage, cultural festivals, and
+    traditional art forms.
+  </p>
+
+  <p>
+    The peaceful environment and stunning architecture attract visitors
+    from across the world.
+  </p>
+
+  <p>
+    The best time to visit Udaipur is from October to March.
+  </p>
+<br><br>
+<h1 class="nav-heading">✈ Travel Without Limits</h1>
+
+ <ul class="flex justify-between text-base font-normal gap-20 px-0"><li class="relative pb-2 text-primary text-sm text-center font-medium lg:text-primary" data-testid="navlist"><a href="flightbook.html" class="font-medium flex items-center gap-5 cursor-pointer"><div class="w-[50px] flex justify-center xl:w-auto"><img src="https://images.ixigo.com/image/upload/Header/2af43f961dddc6cfb02254712f0df058-rbzyb.webp" width="40" height="40" alt="ixigo Flights" title="ixigo Flights" loading="eager" class="h-[60px] w-[60px]" fetchpriority="high"></div><p class="body-sm text-xl text-primary">Flights</p> </a></li><li class="relative pb-2 text-primary text-sm text-center lg:text-secondary" data-testid="navlist"><a href="Hotel.html" class="font-medium flex items-center gap-5 cursor-pointer"><div class="w-[50px] flex justify-center xl:w-auto"><img src="https://images.ixigo.com/image/upload/Header/2fa9ebf005adc1ed6473d6229aedfaa5-dwtqq.webp" width="40" height="40" alt="ixigo Hotels" title="ixigo Hotels" loading="eager" class="h-[60px] w-[60px]" fetchpriority="high"><div class="bg-neutral-solid text-neutral-solid min-h-15px gap-0.5 body-2xs inline-flex items-center font-normal rounded-full px-5px absolute -top-5 left-20 bg-new-solid text-new-solid whitespace-nowrap"><span>Up to 50% Off</span></div></div><p class="body-sm text-xl text-secondary">Hotels</p></a></li><li class="relative pb-2 text-primary text-sm text-center lg:text-secondary" data-testid="navlist"><a href="Trains.html" class="font-medium flex items-center gap-5 cursor-pointer"><div class="w-[50px] flex justify-center xl:w-auto"><img src="https://images.ixigo.com/image/upload/Header/d2db102bf758f425496336d908a598b8-dttji.webp" width="40" height="40" alt="ixigo Trains" title="ixigo Trains" loading="eager" class="h-[60px] w-[60px]" fetchpriority="high"></div><p class="body-sm text-xl text-secondary">Trains</p></a></li><li class="relative pb-2 text-primary text-sm text-center lg:text-secondary" data-testid="navlist"><a href="Buses.html" class="font-medium flex items-center gap-5 cursor-pointer"><div class="w-[50px] flex justify-center xl:w-auto"><img src="https://images.ixigo.com/image/upload/Header/23928375e30875ccd2ba5613aae81763-qqyww.webp" width="40" height="40" alt="ixigo Buses" title="ixigo Buses" loading="eager" class="h-[60px] w-[60px]" fetchpriority="high"></div><p class="body-sm text-xl text-secondary">Buses</p></a></li></ul>
+
+  <!-- PAYMENT SECTION -->
+    <section class="payment-section">
+      <h2>Travel Booking & UPI Payment</h2>
+
+      <div class="payment-box">
+
+        <h3>User Details</h3>
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="text" id="upi" placeholder="UPI ID (example@upi)">
+
+        <h3>Travel Details</h3>
+        <input type="text" id="from" placeholder="From Location">
+        <input type="text" id="to" placeholder="To Location" value="">
+
+        <h3>Ticket Type</h3>
+        <select id="ticket">
+          <option value="0">Select Ticket</option>
+          <option value="1100">Indian Visitor – ₹1100</option>
+          <option value="5400">Foreign Visitor – ₹5400</option>
+          <option value="600">Children – ₹600</option>
+        </select>
+
+        <p>
+          Total Amount: <span id="amount">₹0</span>
+        </p>
+
+        <button id="payBtn" type="button">Pay with UPI</button>
+        <!-- OTP BOX -->
+        <div id="otpBox" style="display:none;">
+          <input type="number" id="otpInput" placeholder="Enter OTP">
+          <button onclick="verifyOTP()">Verify OTP</button>
+          
+        </div>
+        <div class="scanner-box">
+  <h3>Scan UPI QR</h3>
+  <div class="qr-box">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=upi%3A%2F%2Fpay%3Fpa%3Dyourupi2%40okaxis%26pn%3DFarida%26cu%3DINR"
+         alt="Farida QR 2">
+</div>
+
+
+  <p class="scan-status" id="scanStatus">
+    Point camera at QR code
+  </p>
+</div>
+
+
+      </div>
+    </section>
+
+    <a href="index.html" class="back-btn">⬅ Back</a>
+  </div>
+
+  <!-- ✅ JAVASCRIPT (Exact & Working) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      let generatedOTP = "";
+
+      const payBtn = document.getElementById("payBtn");
+      const ticket = document.getElementById("ticket");
+      const amount = document.getElementById("amount");
+
+      function updateAmount() {
+        amount.textContent = "₹" + Number(ticket.value);
+      }
+
+      ticket.addEventListener("change", updateAmount);
+
+      payBtn.addEventListener("click", function () {
+        if (ticket.value === "0") {
+          alert("Please select a ticket first");
+          return;
+        }
+
+        generatedOTP = Math.floor(100000 + Math.random() * 900000);
+        console.log("OTP:", generatedOTP); // demo purpose
+
+        alert("OTP sent successfully 📩");
+        document.getElementById("otpBox").style.display = "block";
+      });
+
+      window.verifyOTP = function () {
+        const userOTP = document.getElementById("otpInput").value;
+
+        if (userOTP == generatedOTP) {
+          alert("Payment Successful 🎉\nTotal Paid: " + amount.textContent);
+        } else {
+          alert("Invalid OTP ❌");
+        }
+      };
+
+    });
+
+  </script>
+
+  <!-- <script src="https://unpkg.com/html5-qrcode"></script> -->
+
+<script>
+  const statusText = document.getElementById("scanStatus");
+
+  function onScanSuccess(decodedText) {
+    statusText.textContent = "QR Scanned Successfully ✅";
+    console.log("QR Data:", decodedText);
+    html5QrCode.stop();
+  }
+
+  const html5QrCode = new Html5Qrcode("qr-video");
+
+  Html5Qrcode.getCameras().then(cameras => {
+    if (cameras && cameras.length) {
+      html5QrCode.start(
+        cameras[0].id,
+        { fps: 10, qrbox: 180 },
+        onScanSuccess
+      );
+    }
+  }).catch(err => {
+    statusText.textContent = "Camera access denied ❌";
+  });
+</script>
+</div>
